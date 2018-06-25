@@ -1,10 +1,10 @@
 # Squirtgun
 
-<div style="text-align:center">
+<p align="center">
     <img src="res/squirtgun.png"></img>
     <br>
     <b>A Digital Ocean Droplet Launcher</b>
-</div>
+</p>
 
 
 ### Requirements
@@ -44,3 +44,4 @@
      `ssh -i keys/digitaloceanKey <user>@<master-ip>`
 
         
+
