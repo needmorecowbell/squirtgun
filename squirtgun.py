@@ -93,12 +93,12 @@ if __name__ == '__main__':
         'Authorization':'Bearer '+conf.digital_ocean['token']
         }
 
-
+    #Get all image templates
     response = requests.get('https://api.digitalocean.com/v2/images?per_page=999', headers=headers)
     imageLibrary = response.json()['images']
 
 
-
+    #Get the image id and Name from chosen image
     imageid,imageName= searchWizard(imageLibrary)
     print("Selection size plan: ")
     sizeSlug= getSize()
@@ -111,9 +111,9 @@ if __name__ == '__main__':
 
     print("[-] Creating Droplet ")
     hostname= input("Enter hostname: ")
-    region= input("Enter region: ")
+    region= input("Enter region (ie: nyc1): ")
 
-    region="nyc1"
+
     manager = digitalocean.Manager(token=conf.digital_ocean['token'])
     keys= manager.get_all_sshkeys()
 
