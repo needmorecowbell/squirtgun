@@ -148,7 +148,7 @@ if __name__ == '__main__':
     load=droplet.load()
     ip=load.ip_address
     print("[-] Droplet information:")
-    print("[-]\t Droplet ID:"+str(droplet.id))
+    print("[-]\tDroplet ID:"+str(droplet.id))
     print("[-]\tIPV4:"+load.ip_address)
 
     print("[+] Droplet Connection: \n\t ssh -i keys/digitaloceanKey root@"+str(ip))

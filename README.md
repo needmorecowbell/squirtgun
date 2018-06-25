@@ -1,24 +1,25 @@
-# Jumper
+# Squirtgun
 
-
-![jumper](res/jumper.gif)
+<div style="text-align:center">
+    <img src="res/squirtgun.png"></img>
+    <br>
+    <b>A Digital Ocean Droplet Launcher</b>
+</div>
 
 
 ### Requirements
 
-- Digital Ocean api token
-- Firewalled Client with SSH, python2/3, and wget
-- Remote Client with python3
-
+- Digital Ocean API token
+- Python 3+
 
 ### Installation
  
  1. **Create Key**
   
-     - `cd keys/ && ssh-keygen`
+      `cd keys/ && ssh-keygen`
     
    ```
-   Enter file in which to save the key (/root/.ssh/id_rsa): digitalOceanKey
+   Enter file in which to save the key (/root/.ssh/id_rsa): digitaloceanKey
    Enter passphrase (empty for no passphrase): 
    Enter same passphrase again: 
    Your identification has been saved in digitalOceanKey.
@@ -27,24 +28,19 @@
 
  2. **Fill in Config** 
       
-    Add your Digital Ocean token to config.py using a text editor.
-      - [How to Get Access Token](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2)
+    Add your Digital Ocean token to config.py using a text editor and update if needed.
+  	- [How to Get Access Token](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-api-v2)
        
  3. **Install requirements** 
 
-     - `pip install -r requirements.txt`
+     `pip install -r requirements.txt`
  
- 4. **Run createMaster.py**
+ 4. **Run The Launcher**
         
-    - `python3 createMaster.py`
+     `python3 squirtgun.py`
 
- 5. **Inject python file into slave computer** 
+ 5. **Connect to Server**
 
-    Slave computer needs to execute the payload generated from createMaster.py. Either python version will work for this step.
-    
-    -  `python3 payload.py` or `python payload.py`
- 
- 6. **Connect to Tunnelled Client**
+     `ssh -i keys/digitaloceanKey <user>@<master-ip>`
 
-    -  `ssh <user>@<master-ip> -p 10022`
-
+        
